@@ -24,7 +24,6 @@ export class GameListComponent implements OnInit {
       (data:GameModel[])=>{
         this.games = data      
         this.length = this.games.length
-        console.log(this.length)
       }
     )
   }
@@ -38,6 +37,7 @@ export class GameListComponent implements OnInit {
     this.games.sort((a,b)=>{
       return b.score - a.score
     })
+    this.router.navigate(['/'])
   }
   
   sortByScoreLTH(sort:string){
@@ -45,6 +45,7 @@ export class GameListComponent implements OnInit {
     this.games.sort((a,b)=>{
       return a.score - b.score
     })
+    this.router.navigate(['/'])
   }
 
   sortByYearLatest(sort:string){
@@ -52,6 +53,7 @@ export class GameListComponent implements OnInit {
     this.games.sort((a,b)=>{
       return b.release_year - a.release_year
     })
+    this.router.navigate(['/'])
   }
   
   sortByYearOldest(sort:string){
@@ -59,6 +61,7 @@ export class GameListComponent implements OnInit {
     this.games.sort((a,b)=>{
       return a.release_year - b.release_year
     })
+    this.router.navigate(['/'])
   }
 
   sortByAtoZ(sort:string){
@@ -68,6 +71,7 @@ export class GameListComponent implements OnInit {
       if(a.title > b.title) { return 1; }
       return 0;
     })
+    this.router.navigate(['/'])
   }
   
   sortByZtoA(sort:string){
@@ -77,6 +81,7 @@ export class GameListComponent implements OnInit {
       if(b.title > a.title) { return 1; }
       return 0;
     })
+    this.router.navigate(['/'])
   }
 
 }

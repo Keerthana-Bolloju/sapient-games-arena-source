@@ -2,7 +2,6 @@ import { Component, OnInit, Input,  } from '@angular/core';
 import { GameModel } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GameDataService } from 'src/app/services/game-data.service';
 
 @Component({
   selector: 'app-game-card',
@@ -11,16 +10,20 @@ import { GameDataService } from 'src/app/services/game-data.service';
 })
 export class GameCardComponent implements OnInit {
 
-  constructor(private gameService:GameService,private router:Router, private route:ActivatedRoute) { }
+  constructor(private gameService:GameService) { }
 
   @Input() gameData:GameModel;
   @Input() index:number
+  public title:string;
+  public platform:string;
 
   ngOnInit() {    
     this.sendData()
     }
 
   sendData(){
+    this.title = this.gameData.title
+    this.platform = this.gameData.platform
     this.gameService.getGameByIndex(this.gameData)
   }
 

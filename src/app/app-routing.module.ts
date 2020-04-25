@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'',redirectTo:'/sapient-games-arena/home',pathMatch:'full'},
   {path:'sapient-games-arena/home',component:HomeComponent,children:[
     {path:'',component:DefaultPageComponent},
-    {path:'game/:title',component:GameDetailsComponent}
+    {path:'game/:title/:platform',component:GameDetailsComponent}
   ]}
 ];
 

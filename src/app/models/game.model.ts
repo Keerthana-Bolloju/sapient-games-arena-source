@@ -7,5 +7,6 @@ export class GameModel {
         public genre:string,
         public editors_choice:string,
         public release_year:number,
+        public id?:number,
     ){}
 }

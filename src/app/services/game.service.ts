@@ -7,7 +7,6 @@ import { Subject, Observable } from 'rxjs';
 })
 export class GameService {
 
-  private gamesData:GameModel;
   public gameDOMChange = new Subject<GameModel>();
   getGame = this.gameDOMChange.asObservable();
 
