@@ -1,0 +1,13 @@
+<div id="wrapper-bg">
+    <div class="container-fluid content-view" *ngIf="content">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-8 list-view">
+                <app-game-list></app-game-list>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 detail-view xs-hidden">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <app-loader *ngIf="loader"></app-loader>
+</div>

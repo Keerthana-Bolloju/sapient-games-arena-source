@@ -1,0 +1,161 @@
+@import '../../../../assets/scss/base.scss';
+@import '../../../../assets/scss/variable.scss';
+
+#game-card{    
+    .status{    
+        position:relative;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        padding:1rem;
+        background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark-paths.png') center center no-repeat;
+        background-size: cover;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $steelblue;
+            border-radius: 20px;
+            background-image:linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+            background-image: -webkit-linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+            background-image: -o-linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+            background-image: -moz-linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+            opacity: .3; 
+          }              
+          &.activeCard{
+            border: 4px solid $light-grey;
+          }             
+        .status-title{
+            z-index: 1;
+            font-size: $font-12;
+            font-family: $font-bold;
+            color: $white;
+            border-bottom:1px solid $white;
+            &.xs-hidden{
+                display: block;
+              }
+            &.lg-hidden{
+                display: none;
+              }  
+        }
+        .status-body{
+            z-index: 1;
+            margin: 1rem 0;
+            h6{                
+            font-size: $font-12;
+            font-family: $font-regular;
+            color: $white;
+            }
+        }
+        .status-footer{
+            z-index: 1;
+            &.xs-hidden{
+                display: block;
+              }
+            &.lg-hidden{
+                display: none;
+              }  
+            .button-row{
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                & .wrap-button{
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    z-index: 1;
+                    border-radius: 25px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    & .button-bg{
+                        position: absolute;
+                        z-index: -1;
+                        width: 300%;
+                        height: 100%;
+                        background: $steelblue;
+                        background-image: -webkit-linear-gradient(to right, $black, $steelblue, $black, $steelblue);
+                        background-image: -o-linear-gradient(to right, $black, $steelblue, $black, $steelblue);
+                        background-image: -moz-linear-gradient(to right, $black, $steelblue, $black, $steelblue);
+                        background-image: linear-gradient(to right, $black, $steelblue, $black, $steelblue);
+                        top: 0;
+                        left: -100%;
+                        -webkit-transition: all 0.4s;
+                        -o-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;
+                    }
+                   & .submit-btn{
+                    font-family: $font-medium;
+                    font-size: $font-9;
+                    color: $white;
+                    line-height: 1.2;
+                    text-transform: uppercase;  
+                    text-align: center;
+                    padding: 0 25px;
+                    width: 100%;
+                    height: 35px;
+                   } 
+                  &:hover .button-bg{
+                    left: 0;
+                  } 
+                }
+            }
+        }
+    }
+    
+& #game-modal-card{
+  display: none;
+  .modal.fade.show.modalBoxView{
+    background: rgba(14, 9, 9, 0.2);
+    justify-content: center;
+    align-items: center;
+    .modal-dialog.modalStyle{
+      height: 50vh;
+      margin-top: 25vh;
+      margin-bottom: 25vh;
+      .status{
+        .status-title{
+          font-size: $font-18;
+        }
+        .status-body{          
+          font-size: $font-16;
+          text-align: left;
+          font-family: $font-regular;
+        }
+        .status-footer{
+          cursor: pointer;
+        }
+      }
+  }
+}
+}
+
+
+}
+
+@media only screen and (max-width: 767px) {
+    #game-card{
+        .status{
+          .status-title.xs-hidden{
+            display: none;
+          }.status-title.lg-hidden{
+            display: block;
+          }
+          .status-footer.xs-hidden{
+            display: none;
+          }.status-footer.lg-hidden{
+            display: block;
+          }
+        }
+        & #game-modal-card{
+          display: block;
+        } 
+      }
+  }

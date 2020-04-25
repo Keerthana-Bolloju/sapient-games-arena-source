@@ -1,0 +1,63 @@
+<div id="game-card">
+  <div class="d-flex flex-column mb-2">
+    <div class="card status" (click)="sendData()" routerLinkActive="activeCard">
+    <p class="status-title xs-hidden">
+      {{gameData.title | shorten:10}}
+    </p>
+    <p class="status-title lg-hidden">
+      {{gameData.title | shorten:25}}
+    </p>
+    <div class="status-body">
+      <h6>Released: {{gameData.release_year}}</h6>
+    </div>
+
+    <div class="status-footer xs-hidden">
+      <div class="button-row">
+        <div class="wrap-button">
+          <div class="button-bg"></div>
+          <button class="submit-btn" [routerLink]="[index]">Click Here</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-footer lg-hidden">
+      <div class="button-row">
+        <div class="wrap-button">
+          <div class="button-bg"></div>
+          <button class="submit-btn" data-toggle="modal" [attr.data-target]="'#gameCardModal' + index" [routerLink]="[index]">Click Here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div id="game-modal-card">
+  <div class="modal fade modalBoxView" id="gameCardModal{{ index }}" tabindex="-1" role="dialog"
+  aria-labelledby="gameCardModalTitle" aria-hidden="true">
+  <div class="modal-dialog modalStyle" role="document">
+    <div class="d-flex flex-column status mb-2" (click)="sendData()">
+      <p class="status-title">
+        {{gameData.title}}
+      </p>
+      <div class="status-body">
+        <h6><b>Platform</b> : {{gameData.platform}}</h6>
+        <h6><b>Score</b> : {{gameData.score}}</h6>
+        <h6><b>Genre</b> : {{gameData.genre}}</h6>
+        <h6><b>Editors Choice</b> : {{gameData.editors_choice}}</h6>
+        <h6><b>URL</b> : {{gameData.url}}</h6>
+        <h6><b>Release Year</b> : {{gameData.release_year}}</h6>
+      </div>
+      <div class="status-footer">
+        <div class="button-row">
+          <div class="wrap-button">
+            <div class="button-bg"></div>
+            <button class="submit-btn" [routerLink]="[index]" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+</div>

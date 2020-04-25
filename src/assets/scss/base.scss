@@ -1,0 +1,66 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'variable.scss';
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: $font-regular, sans-serif;
+}
+
+a {
+	font-family: $font-regular;
+	font-size: $font-9;
+	line-height: 1.7;
+	color: $steelblue;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: $steelblue;
+  color: -webkit-linear-gradient(left, $black, $steelblue);
+  color: -o-linear-gradient(left, $black, $steelblue);
+  color: -moz-linear-gradient(left, $black, $steelblue);
+  color: linear-gradient(left, $black, $steelblue);
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: $font-regular;
+	font-size: $font-9;
+	line-height: 1.7;
+	color: $white;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}

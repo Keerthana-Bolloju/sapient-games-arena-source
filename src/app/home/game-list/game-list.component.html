@@ -1,0 +1,33 @@
+
+    <div class="row"> 
+        <div class="d-flex" style="flex-grow:3">               
+        <div class="searchbar">
+            <input [(ngModel)]="inputText" (click)="default()" placeholder="Search Here By Title">
+        </div>
+        
+        <div class="mx-2 dropdown">
+            <button class="btn btn-secondary btnstyle btn-sm dropdown-toggle" type="button" id="dropdownsortBy" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Sort By {{sortString}}
+            </button>
+            <div class="dropdown-menu sort-by-style" aria-labelledby="dropdownsortBy">
+                <p class="dropdown-item item-style mb-0" (click)="sortByScoreLTH('Score: Low to High')">Score: Low to High</p>
+                <p class="dropdown-item item-style mb-0" (click)="sortByScoreHTL('Score: High to Low')">Score: High to Low</p>
+                <p class="dropdown-item item-style mb-0" (click)="sortByYearLatest('Year: Latest')">Year: Latest</p>
+                <p class="dropdown-item item-style mb-0" (click)="sortByYearOldest('Year: Oldest')">Year: Oldest</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="row cards-view my-4">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngFor=" let i = index; let game of games|filter:inputText | paginate: {itemsPerPage:20,currentPage:pageNo}">
+            <app-game-card [gameData]="game" [index]="i"></app-game-card>
+        </div>    
+    </div>
+    
+    <div class="row">    
+        <div class="pagination-row">
+            <pagination-controls class="pagination" (pageChange)="pageNo=$event"></pagination-controls>
+        </div>
+    </div>

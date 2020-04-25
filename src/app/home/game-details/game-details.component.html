@@ -1,0 +1,20 @@
+
+  <div id="game-details" *ngIf="game">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="game-title">
+        {{game.title}}
+      </div>
+      
+      <div class="game-icon my-4">{{game.title[0]}}</div>
+    </div>
+
+    <div class="game-body">
+      <h6><b>Platform</b> : {{game.platform}}</h6>
+      <h6><b>Score</b> : {{game.score}}</h6>
+      <h6><b>Genre</b> : {{game.genre}}</h6>
+      <h6><b>Editors Choice</b> : {{game.editors_choice}}</h6>
+      <h6><b>Release Year</b> : {{game.release_year}}</h6>
+      <h6><b>URL</b> : {{game.url}}</h6>
+    </div>
+
+  </div>

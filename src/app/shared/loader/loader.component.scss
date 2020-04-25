@@ -1,0 +1,51 @@
+@import '../../../assets/scss/variable.scss';
+
+#loader{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .page-loader {
+      font-family: $font-bold;
+      font-size: $font-35;
+      font-size: 6rem;
+      background-image: linear-gradient(75deg, 
+        steelblue,
+        darkslateblue,
+        silver,
+        cadetblue,
+        midnightblue,
+        steelblue,
+        darkslateblue,
+        silver,
+        cadetblue,
+        midnightblue,
+        steelblue
+        );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      animation: myanimation 3s linear infinite alternate;
+      position: relative;
+      text-align: center;
+    }
+    
+    @keyframes myanimation {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 100%;
+      }
+    }
+}
+@media screen and (max-width: 768px) {
+  .page-loader{
+    font-size: $font-18;
+  }
+}

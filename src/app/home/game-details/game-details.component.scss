@@ -1,0 +1,49 @@
+@import '../../../assets/scss/base.scss';
+@import '../../../assets/scss/variable.scss';
+
+#game-details{
+    .game-title{
+        z-index: 1;
+        font-size: $font-18;
+        font-family: $font-bold;
+        color: $white;
+        text-align: center;
+    }
+    .game-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:$white;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        color:$black;
+        font-size: $font-35;
+        font-family: $font-bold;
+    }
+    .game-body{
+        z-index: 1;
+        margin: 1rem 0;
+        h6{                
+        z-index: 1;
+        font-size: $font-16;
+        font-family: $font-semibold;
+        color: $white;
+        margin: 1rem 0;
+        }
+    }
+}
+@media screen and (max-width:770px){
+    #game-details{
+        .game-icon{
+            width: 4rem;
+            height: 4rem;
+            font-size: $font-18;
+        }
+        .game-body{
+            h6{
+                margin: 0.5rem 0;
+            }
+        }
+    }
+}

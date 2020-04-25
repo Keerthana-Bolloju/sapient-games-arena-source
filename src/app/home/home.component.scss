@@ -1,0 +1,60 @@
+@import '../../assets/scss/variable.scss';
+
+#wrapper-bg{
+    width:100%;
+    height: 100vh;    
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: center;
+        background: $black;
+      .content-view{
+          margin: 0 5vh;
+          overflow: hidden;
+            & .list-view{
+                background: transparent;
+                height: 90vh;
+                margin: 5vh auto;                
+            }
+            & .detail-view{
+                  height: 90vh;
+                  margin: 5vh auto;
+                  border-radius: 10px;
+                  position:relative;
+                  border-radius: 20px;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 2rem 1.5rem;
+                  background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark-paths.png') center center no-repeat;
+                  background-size: cover;
+                  &:before {
+                      content: '';
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      bottom: 0;
+                      left: 0;
+                      background: $steelblue;
+                      border-radius: 20px;
+                      background-image:linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+                      background-image: -webkit-linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+                      background-image: -o-linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+                      background-image: -moz-linear-gradient(135deg, $black, $steelblue,$black,$steelblue,$black,$steelblue,$black, rgba(0, 0, 0, 0));
+                      opacity: .3; 
+                    }    
+              }
+        }
+}
+@media only screen and (max-width: 760px) {
+  #wrapper-bg{
+    .content-view{
+      .detail-view.xs-hidden{
+        display: none;
+      }
+    }
+  }
+}
+
