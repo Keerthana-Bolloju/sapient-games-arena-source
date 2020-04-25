@@ -15,13 +15,14 @@ export class GameCardComponent implements OnInit {
 
   @Input() gameData:GameModel;
   @Input() index:number
-  selected:GameModel;
+  public title:string;
 
   ngOnInit() {    
 this.sendData()
     }
 
   sendData(){
+    this.title = this.gameData.title
     this.gameService.getGameByIndex(this.gameData)
   }
 

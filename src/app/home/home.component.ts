@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.loader = false
       this.content = true
-    }, 3500);
+    }, 3000);
   }
 
 }
