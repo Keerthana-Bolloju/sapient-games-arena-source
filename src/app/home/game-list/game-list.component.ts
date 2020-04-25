@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from 'src/app/services/game.service';
 import { GameModel } from 'src/app/models/game.model';
 import { GameDataService } from 'src/app/services/game-data.service';
-import { Z_ASCII } from 'zlib';
 
 @Component({
   selector: 'app-game-list',
@@ -23,10 +22,9 @@ export class GameListComponent implements OnInit {
   ngOnInit() {
     this.gameDataService.getGamesData().subscribe(
       (data:GameModel[])=>{
-        this.games = data
-        // this.games = 
-      
+        this.games = data      
         this.length = this.games.length
+        console.log(this.length)
       }
     )
   }
@@ -34,8 +32,6 @@ export class GameListComponent implements OnInit {
  default(){
    this.pageNo = 1
  }
-
-
     
   sortByScoreHTL(sort:string){
     this.sortString = sort
